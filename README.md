@@ -110,7 +110,26 @@ spec:
     name: blog  # Selector for pods
 
 ```
+## Deploying the Configuration
+Apply the configuration files to your Kubernetes cluster using `kubectl apply -f project.yaml`
 
-## Accessing the Blog Web App
-Once deployed, you can access the blog web app at the NodePort address:
-http://localhost:32000
+## Accessing the Web App on Docker Kubernetes
+Once deployed, you can access the blog web app by using port-forward command:
+```
+kubectl port-forward service/blog-service 8099:80
+```
+#### The Application would be accessible at: http://localhost:8099
+
+## Accessing the Web App on Minikube with Docker Driver
+Once deployed, you can access the blog web app by using port-forward command:
+```
+minikube service blog-service -p minikube
+```
+#### After running the above command the application would be opened automatically
+
+# Thank you! 👋
+
+## 🔗 Connect with Me
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tejas-durge-0a62a128a/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/TejasDurge55)
+
