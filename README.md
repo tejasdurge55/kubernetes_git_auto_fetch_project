@@ -59,6 +59,16 @@ spec:
 ```
 
 ### Step 3: Deploy Git-Sync
+The git-sync image is typically used in Kubernetes to synchronize a Git repository with a local directory inside a container or a pod. It is a popular choice for scenarios where you want to keep the contents of a Git repository up to date within a Kubernetes cluster.
+
+#### Here's what the git-sync image does:
+- Repository Cloning: When a container with the git-sync image is started, it clones a specified Git repository to a local directory inside the container.
+- Synchronization: After the initial clone, the git-sync container periodically checks for updates in the Git repository. It can be configured to check for updates at specific intervals.
+- Pulling Updates: When updates are detected in the Git repository, the git-sync container pulls these updates into the local directory. This ensures that the contents of the local directory are always synchronized with the latest changes in the Git repository.
+- Volume Mounting: Often, the synchronized directory is mounted as a volume to other containers or pods in the same Kubernetes deployment. This allows other containers or applications to access the synchronized Git repository's contents.
+
+#### Overall, git-sync is a useful tool for maintaining consistency and automatically updating data from a Git repository within a Kubernetes environment.
+
 You can deploy Git-Sync with a single replica using the following YAML configuration file:
 ```yaml
 apiVersion: apps/v1
