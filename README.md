@@ -124,7 +124,7 @@ spec:
 Apply the configuration files to your Kubernetes cluster using `kubectl apply -f project.yaml`
 
 ## Accessing the Web App on Docker Kubernetes
-Once deployed, you can access the blog web app by using port-forward command:
+Once deployed, you can access the blog web app by using the port-forward command:
 ```
 kubectl port-forward service/blog-service 8099:80
 ```
